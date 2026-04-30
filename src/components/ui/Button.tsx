@@ -52,7 +52,7 @@ export default function Button(props: Props) {
 
   const baseClasses = cn(
     'inline-flex items-center gap-2 transition-all duration-200 cursor-pointer select-none',
-    'outline-none focus-visible:ring-2 focus-visible:ring-accent-indigo focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A0A0F]',
+    'outline-none focus-visible:ring-2 focus-visible:ring-accent-indigo',
     'disabled:opacity-50 disabled:cursor-not-allowed',
     variantClasses[variant],
     sizeClasses[size],
