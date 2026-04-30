@@ -7,7 +7,6 @@ export const skillGroups: readonly SkillGroup[] = [
     description: 'Building exceptional user interfaces',
     skills: [
       { name: 'React JS / TS',  level: 'expert' },
-      { name: 'Next.js',        level: 'advanced' },
       { name: 'TypeScript',     level: 'advanced' },
       { name: 'Tailwind CSS',   level: 'expert' },
       { name: 'Redux Toolkit',  level: 'advanced' },

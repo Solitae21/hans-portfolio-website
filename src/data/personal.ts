@@ -1,8 +1,8 @@
 import type { PersonalInfo } from '@/types';
 
 export const personal: PersonalInfo = {
-  name: 'Ampon Khonkaen',
-  firstName: 'Ampon',
+  name: 'Hans Angelo Amponin',
+  firstName: 'Hans',
   title: 'Frontend Developer',
   taglines: [
     'Frontend Developer',
@@ -11,24 +11,20 @@ export const personal: PersonalInfo = {
     'Aspiring Full Stack Developer',
     'Building Great Web Experiences',
   ],
-  bio: `Passionate frontend developer with a strong focus on building clean,
-  performant, and accessible web applications. I love crafting pixel-perfect UIs
-  and am actively expanding my skills into full-stack development with .NET Core
-  and Express.js.`,
-  location: 'Remote — Open to Worldwide',
-  email: 'ampon@example.com',
+  bio: `Computer Engineering graduate and Frontend Developer with 1½ years of professional experience building responsive, user-focused web applications. Aspiring Full Stack Developer with growing skills in backend technologies, APIs, and databases. Strong in problem-solving, debugging, and writing scalable, maintainable code in collaborative environments.`,
+  location: 'Meycauayan, Bulacan, Philippines',
+  email: 'hansamponin@gmail.com',
   availableForWork: true,
   resumeUrl: '/resume.pdf',
   stats: [
-    { label: 'Years Experience', value: '2',  suffix: '+' },
+    { label: 'Years Experience', value: '1',  suffix: '½+' },
     { label: 'Projects Shipped', value: '15', suffix: '+' },
     { label: 'Technologies',     value: '12', suffix: '+' },
     { label: 'Cups of Coffee',   value: '∞' },
   ] as const,
   social: [
-    { platform: 'github',   url: 'https://github.com/ampon',         label: 'GitHub' },
-    { platform: 'linkedin', url: 'https://linkedin.com/in/ampon',    label: 'LinkedIn' },
-    { platform: 'twitter',  url: 'https://twitter.com/ampon',        label: 'Twitter' },
-    { platform: 'email',    url: 'mailto:ampon@example.com',         label: 'Email' },
+    { platform: 'github',   url: 'https://github.com/Solitae21',                              label: 'GitHub' },
+    { platform: 'linkedin', url: 'https://linkedin.com/in/hans-angelo-amponin-057b78277',     label: 'LinkedIn' },
+    { platform: 'email',    url: 'mailto:hansamponin@gmail.com',                              label: 'Email' },
   ] as const,
 } as const;
