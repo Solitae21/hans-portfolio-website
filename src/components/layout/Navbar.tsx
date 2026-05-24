@@ -35,7 +35,7 @@ export default function Navbar() {
             className="font-mono text-sm font-semibold text-white hover:text-accent-indigo transition-colors"
           >
             <span className="text-accent-indigo">&lt;</span>
-            Ampon
+            Hans
             <span className="text-accent-indigo">/&gt;</span>
           </a>
 
