@@ -2,6 +2,18 @@ import type { Project, ProjectFilter } from '@/types';
 
 export const projects: readonly Project[] = [
   {
+    id: 'canvus',
+    title: 'Canvus',
+    description:
+      'Real-time collaborative whiteboarding and flowchart app. Multiple users co-edit a shared canvas with sub-50ms sync, live cursors, presenter mode, threaded comments, and PNG/SVG/PDF export. Powered by Yjs CRDTs and Socket.IO over an Express + Prisma backend.',
+    technologies: ['Next.js', 'React', 'TypeScript', 'Konva', 'Yjs', 'Socket.IO', 'Tailwind CSS', 'Prisma', 'PostgreSQL', 'Redis'],
+    imageUrl: 'https://image.thum.io/get/width/1200/crop/675/viewportWidth/1440/https://canvus-henna.vercel.app/',
+    liveUrl: 'https://canvus-henna.vercel.app/',
+    githubUrl: 'https://github.com/Solitae21/canvus',
+    featured: true,
+    category: 'fullstack',
+  },
+  {
     id: 'ecommerce-dashboard',
     title: 'E-Commerce Dashboard',
     description:
