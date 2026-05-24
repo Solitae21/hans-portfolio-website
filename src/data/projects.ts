@@ -14,6 +14,16 @@ export const projects: readonly Project[] = [
     category: 'fullstack',
   },
   {
+    id: 'asialink-auction',
+    title: 'Asialink Car Auction',
+    description:
+      'Public online auction platform for Asialink Finance where users browse and bid on repossessed vehicles. Built as a React SPA with Redux Toolkit and RTK Query for data fetching, caching, and auth, with a Material UI interface. Developed as part of my work at Asialink Finance.',
+    technologies: ['React', 'TypeScript', 'Redux Toolkit', 'RTK Query', 'MUI'],
+    liveUrl: 'https://auction.asialinkfinance.com.ph/',
+    featured: true,
+    category: 'frontend',
+  },
+  {
     id: 'ecommerce-dashboard',
     title: 'E-Commerce Dashboard',
     description:
