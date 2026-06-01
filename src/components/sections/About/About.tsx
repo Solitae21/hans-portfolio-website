@@ -3,6 +3,7 @@ import { MapPin, Mail, CheckCircle2 } from 'lucide-react';
 import { ScrollReveal, SectionHeader, AnimatedBadge, Button } from '@/components/ui';
 import StatCard from './StatCard';
 import { personal } from '@/data/personal';
+import profileImg from '@/assets/img/profile.jpg';
 
 const techStack = [
   'React', 'TypeScript', 'Next.js', 'Tailwind CSS',
@@ -35,13 +36,11 @@ export default function About() {
               <div className="relative w-56 h-56 mx-auto lg:mx-0">
                 <div className="w-full h-full rounded-2xl bg-gradient-to-br from-accent-indigo via-accent-purple to-accent-cyan p-0.5">
                   <div className="w-full h-full rounded-2xl bg-bg-tertiary flex items-center justify-center overflow-hidden">
-                    {/* Placeholder avatar — replace with <img> when you have a photo */}
-                    <div className="flex flex-col items-center gap-2 text-gray-500">
-                      <div className="w-24 h-24 rounded-full bg-gradient-to-br from-accent-indigo to-accent-purple flex items-center justify-center text-white text-4xl font-bold">
-                        {personal.firstName.charAt(0)}
-                      </div>
-                      <span className="text-sm font-mono">{personal.firstName}</span>
-                    </div>
+                    <img
+                      src={profileImg}
+                      alt={personal.name}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 </div>
                 {/* Glow ring */}
