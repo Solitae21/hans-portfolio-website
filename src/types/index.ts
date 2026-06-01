@@ -45,6 +45,14 @@ export interface Experience {
   readonly current?: boolean;
 }
 
+// ─── Certification Domain ────────────────────────────────────────────────
+export interface Certification {
+  readonly name: string;
+  readonly issuer: string;
+  readonly date: string;
+  readonly featured?: boolean;
+}
+
 // ─── Personal / About Domain ─────────────────────────────────────────────
 export type SocialPlatform = 'github' | 'linkedin' | 'twitter' | 'email';
 

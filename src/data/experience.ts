@@ -9,12 +9,13 @@ export const experiences: readonly Experience[] = [
     description:
       'Developed multiple internal web applications for a nationwide finance company, improving operational efficiency across departments.',
     achievements: [
-      'Developed the frontend of a Warehouse Monitoring System using React TS, MUI, and Redux within 1.5 months, improving UI responsiveness and reducing employee navigation time by 30–40%',
-      'Built the frontend for a Fair Market Value Generator using React TS, MUI, and Redux in under 1 month, streamlining data workflows and cutting manual processing time for Sales teams by 40%',
-      'Redesigned and optimized the nationwide Master List Search Web Application using React TS, MUI, and Redux, enhancing data retrieval workflows and supporting the company\'s 21% YoY growth through improved user productivity',
-      'Developed a frontend for a scalable Auction Web Application using React TS, MUI, and Redux, delivering an intuitive bidding interface that attracted 1,000+ active clients and increased platform engagement significantly',
+      'Built a Warehouse Monitoring System (React TS, MUI, Redux) end-to-end in 6 weeks, improving UI responsiveness and cutting employee navigation time by 30–40%',
+      'Delivered a Fair Market Value Generator in under 2 months, eliminating manual spreadsheet workflows and reducing Sales team processing time by ~30%',
+      'Redesigned and optimized a nationwide Master List Search application (2M+ records), directly supporting a 21% YoY company growth target through improved data-retrieval UX',
+      'Developed an Auction Web Application frontend with a real-time bidding interface that onboarded 1,000+ active clients and measurably increased platform engagement',
+      'Held de facto tech-lead responsibilities on the frontend team — reviewing PRs, defining component architecture, and onboarding teammates',
     ],
-    technologies: ['React', 'TypeScript', 'MUI', 'Redux Toolkit'],
+    technologies: ['React', 'TypeScript', 'Redux Toolkit', 'RTK Query', 'MUI'],
     type: 'work',
     current: true,
   },

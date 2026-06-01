@@ -15,7 +15,7 @@ export default function Contact() {
       <div className="section-container relative">
         <ScrollReveal>
           <SectionHeader
-            tag="05. Contact"
+            tag="06. Contact"
             title="Get In Touch"
             subtitle="Have a project in mind or want to chat? I'd love to hear from you."
           />

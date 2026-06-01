@@ -11,6 +11,7 @@ export const skillGroups: readonly SkillGroup[] = [
       { name: 'TypeScript', level: 'advanced' },
       { name: 'Tailwind CSS', level: 'expert' },
       { name: 'Redux Toolkit', level: 'advanced' },
+      { name: 'RTK Query', level: 'advanced' },
       { name: 'Material UI', level: 'advanced' },
       { name: 'Bootstrap', level: 'expert' },
       { name: 'Figma', level: 'intermediate' },
@@ -38,6 +39,8 @@ export const skillGroups: readonly SkillGroup[] = [
     description: 'Development workflow & collaboration',
     skills: [
       { name: 'Git / GitHub', level: 'advanced' },
+      { name: 'Azure Repos', level: 'advanced' },
+      { name: 'Azure Pipelines', level: 'intermediate' },
       { name: 'Vite', level: 'advanced' },
       { name: 'VS Code', level: 'expert' },
       { name: 'Postman', level: 'advanced' },
