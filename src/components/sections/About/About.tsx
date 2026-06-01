@@ -40,6 +40,7 @@ export default function About() {
                       src={profileImg}
                       alt={personal.name}
                       className="w-full h-full object-cover"
+                      style={{ objectPosition: 'center 25%' }}
                     />
                   </div>
                 </div>

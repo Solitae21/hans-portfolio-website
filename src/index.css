@@ -101,9 +101,15 @@
 
   .glass {
     backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
     background-color: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.10);
+  }
+  /* Lightning CSS (Tailwind v4) collapses a hand-written -webkit-backdrop-filter
+     into the standard one and drops it, so isolate the prefix in @supports. */
+  @supports (-webkit-backdrop-filter: blur(1px)) {
+    .glass {
+      -webkit-backdrop-filter: blur(12px);
+    }
   }
 
   .glass-hover {
