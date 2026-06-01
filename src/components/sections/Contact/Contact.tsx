@@ -9,7 +9,7 @@ export default function Contact() {
     <section id="contact" className="relative py-24 md:py-32 bg-bg-secondary">
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse 60% 50% at 50% 100%, rgba(52,211,153,0.08) 0%, transparent 60%)' }}
+        style={{ background: 'radial-gradient(ellipse 60% 50% at 50% 100%, rgba(99,102,241,0.10) 0%, transparent 60%)' }}
       />
 
       <div className="section-container relative">

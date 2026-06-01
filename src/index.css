@@ -2,19 +2,19 @@
 @import "tailwindcss";
 
 @theme {
-  /* ─── Background colors (deep phosphor-black, faint green tint) ── */
-  --color-bg-primary: #050A07;
-  --color-bg-secondary: #08110C;
-  --color-bg-tertiary: #0B1A12;
-  --color-bg-elevated: #0F2418;
+  /* ─── Background colors ─────────────────────────────────────── */
+  --color-bg-primary: #0A0A0F;
+  --color-bg-secondary: #0F0F1A;
+  --color-bg-tertiary: #141428;
+  --color-bg-elevated: #1A1A2E;
 
-  /* ─── Accent colors (muted phosphor green → lime → teal) ─────── */
-  --color-accent-indigo: #34D399;
-  --color-accent-indigo-dim: #22A06B;
-  --color-accent-purple: #84CC16;
-  --color-accent-purple-dim: #5E9310;
-  --color-accent-cyan: #2DD4BF;
-  --color-accent-cyan-dim: #1F9E8E;
+  /* ─── Accent colors ─────────────────────────────────────────── */
+  --color-accent-indigo: #6366F1;
+  --color-accent-indigo-dim: #4F52C8;
+  --color-accent-purple: #8B5CF6;
+  --color-accent-purple-dim: #7148D0;
+  --color-accent-cyan: #06B6D4;
+  --color-accent-cyan-dim: #0590A8;
 
   /* ─── Fonts ──────────────────────────────────────────────────── */
   --font-sans: 'Inter', system-ui, sans-serif;
@@ -60,13 +60,13 @@
   html {
     scroll-behavior: smooth;
     scrollbar-width: thin;
-    scrollbar-color: #34D399 transparent;
+    scrollbar-color: #6366F1 transparent;
     overflow-y: scroll;
   }
 
   body {
-    background-color: #050A07;
-    color: #D5E5DB;
+    background-color: #0A0A0F;
+    color: #F9FAFB;
     font-family: 'Inter', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -75,11 +75,6 @@
 
   a, button {
     -webkit-tap-highlight-color: transparent;
-  }
-
-  ::selection {
-    background-color: rgba(52, 211, 153, 0.28);
-    color: #EAFFF1;
   }
 
   :focus:not(:focus-visible) {
@@ -93,24 +88,21 @@
     background: transparent;
   }
   *::-webkit-scrollbar-thumb {
-    background-color: #22A06B;
+    background-color: #6366F1;
     border-radius: 4px;
-  }
-  *::-webkit-scrollbar-thumb:hover {
-    background-color: #34D399;
   }
 }
 
 @layer utilities {
   .bg-dot-pattern {
-    background-image: radial-gradient(rgba(52, 211, 153, 0.08) 1px, transparent 1px);
+    background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
     background-size: 32px 32px;
   }
 
   .glass {
     backdrop-filter: blur(12px);
-    background-color: rgba(52, 211, 153, 0.04);
-    border: 1px solid rgba(52, 211, 153, 0.11);
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.10);
   }
   /* Lightning CSS (Tailwind v4) collapses a hand-written -webkit-backdrop-filter
      into the standard one and drops it, so isolate the prefix in @supports. */
@@ -124,36 +116,36 @@
     transition: all 0.3s ease;
   }
   .glass-hover:hover {
-    background-color: rgba(52, 211, 153, 0.07) !important;
-    border-color: rgba(52, 211, 153, 0.24) !important;
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    border-color: rgba(255, 255, 255, 0.20) !important;
   }
 
   .shadow-glass {
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(52, 211, 153, 0.06);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
   }
 
   .shadow-glass-hover:hover {
-    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(52, 211, 153, 0.09);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
   }
 
   .shadow-glow-indigo {
-    box-shadow: 0 0 28px rgba(52, 211, 153, 0.25);
+    box-shadow: 0 0 30px rgba(99, 102, 241, 0.35);
   }
 
   .shadow-glow-purple {
-    box-shadow: 0 0 28px rgba(132, 204, 22, 0.22);
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.35);
   }
 
   .shadow-glow-cyan {
-    box-shadow: 0 0 28px rgba(45, 212, 191, 0.25);
+    box-shadow: 0 0 30px rgba(6, 182, 212, 0.35);
   }
 
   .shadow-glow-sm {
-    box-shadow: 0 0 14px rgba(52, 211, 153, 0.16);
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.2);
   }
 
   .gradient-text {
-    background: linear-gradient(135deg, #34D399, #84CC16, #2DD4BF);
+    background: linear-gradient(135deg, #6366F1, #8B5CF6, #06B6D4);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -201,7 +193,7 @@
     position: absolute;
     inset: -1px;
     border-radius: inherit;
-    background: linear-gradient(135deg, #34D399, #2DD4BF);
+    background: linear-gradient(135deg, #6366F1, #8B5CF6);
     z-index: -1;
   }
 }

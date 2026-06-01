@@ -10,7 +10,7 @@ export default function HeroBackground() {
 
       {/* Radial gradient overlay — fades grid at edges */}
       <div className="absolute inset-0 bg-radial-gradient" style={{
-        background: 'radial-gradient(ellipse 80% 60% at 50% -10%, rgba(52,211,153,0.12) 0%, transparent 60%)',
+        background: 'radial-gradient(ellipse 80% 60% at 50% -10%, rgba(99,102,241,0.15) 0%, transparent 60%)',
       }} />
 
       {/* Animated orbs */}
@@ -18,15 +18,15 @@ export default function HeroBackground() {
         <>
           <div
             className="absolute top-1/4 left-1/4 w-72 h-72 rounded-full blur-3xl animate-float"
-            style={{ background: 'radial-gradient(circle, rgba(52,211,153,0.16) 0%, transparent 70%)' }}
+            style={{ background: 'radial-gradient(circle, rgba(99,102,241,0.25) 0%, transparent 70%)' }}
           />
           <div
             className="absolute top-1/3 right-1/4 w-96 h-96 rounded-full blur-3xl animate-float-delayed"
-            style={{ background: 'radial-gradient(circle, rgba(132,204,22,0.12) 0%, transparent 70%)' }}
+            style={{ background: 'radial-gradient(circle, rgba(139,92,246,0.20) 0%, transparent 70%)' }}
           />
           <div
             className="absolute bottom-1/4 left-1/3 w-64 h-64 rounded-full blur-3xl animate-float-slow"
-            style={{ background: 'radial-gradient(circle, rgba(45,212,191,0.12) 0%, transparent 70%)' }}
+            style={{ background: 'radial-gradient(circle, rgba(6,182,212,0.15) 0%, transparent 70%)' }}
           />
         </>
       )}

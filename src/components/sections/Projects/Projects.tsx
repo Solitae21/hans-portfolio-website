@@ -6,7 +6,7 @@ export default function Projects() {
     <section id="projects" className="relative py-24 md:py-32 bg-bg-secondary">
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse 60% 40% at 90% 30%, rgba(132,204,22,0.07) 0%, transparent 60%)' }}
+        style={{ background: 'radial-gradient(ellipse 60% 40% at 90% 30%, rgba(139,92,246,0.08) 0%, transparent 60%)' }}
       />
 
       <div className="section-container relative">

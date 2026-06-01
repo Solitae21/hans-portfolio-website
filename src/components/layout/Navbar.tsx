@@ -61,7 +61,7 @@ export default function Navbar() {
           {/* Hire me button — desktop */}
           <a
             href="#contact"
-            className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold bg-gradient-to-r from-accent-indigo to-accent-purple text-bg-primary shadow-glow-sm hover:shadow-glow-indigo hover:opacity-90 transition-all duration-200"
+            className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium bg-gradient-to-r from-accent-indigo to-accent-purple text-white shadow-glow-sm hover:shadow-glow-indigo hover:opacity-90 transition-all duration-200"
           >
             Hire Me
           </a>
@@ -107,7 +107,7 @@ export default function Navbar() {
                   <a
                     href="#contact"
                     onClick={() => setMenuOpen(false)}
-                    className="block w-full text-center px-4 py-3 rounded-xl text-sm font-semibold bg-gradient-to-r from-accent-indigo to-accent-purple text-bg-primary"
+                    className="block w-full text-center px-4 py-3 rounded-xl text-sm font-medium bg-gradient-to-r from-accent-indigo to-accent-purple text-white"
                   >
                     Hire Me
                   </a>
