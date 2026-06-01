@@ -15,7 +15,7 @@ export const personal: PersonalInfo = {
   location: 'Meycauayan, Bulacan, Philippines',
   email: 'hansamponin@gmail.com',
   availableForWork: true,
-  resumeUrl: '/resume.pdf',
+  resumeUrl: '/Hans_Angelo_Amponin_Resume_2026.pdf',
   stats: [
     { label: 'Years Experience', value: '1',  suffix: '½+' },
     { label: 'Projects Shipped', value: '15', suffix: '+' },

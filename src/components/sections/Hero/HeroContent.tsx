@@ -91,8 +91,7 @@ export default function HeroContent() {
           href={personal.resumeUrl}
           size="lg"
           variant="secondary"
-          target="_blank"
-          rel="noopener noreferrer"
+          download
           leftIcon={<Download size={18} />}
         >
           Download CV
