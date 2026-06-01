@@ -1,4 +1,3 @@
-import { Heart } from 'lucide-react';
 import { NAV_ITEMS } from '@/utils/constants';
 import { personal } from '@/data/personal';
 
@@ -32,8 +31,8 @@ export default function Footer() {
 
           {/* Copyright */}
           <p className="text-gray-600 text-sm flex items-center gap-1.5">
-            © {year} {personal.firstName}. Built with
-            <Heart size={12} className="text-red-400 fill-red-400 inline" />
+            © {year} {personal.firstName} Amponin
+    
           </p>
         </div>
       </div>
