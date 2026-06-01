@@ -7,7 +7,7 @@ export default function Experience() {
     <section id="experience" className="relative py-24 md:py-32 bg-bg-primary">
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse 50% 40% at 50% 80%, rgba(6,182,212,0.06) 0%, transparent 60%)' }}
+        style={{ background: 'radial-gradient(ellipse 50% 40% at 50% 80%, rgba(45,212,191,0.05) 0%, transparent 60%)' }}
       />
 
       <div className="section-container relative">

@@ -30,7 +30,7 @@ export default function ProjectGrid() {
             className={cn(
               'px-5 py-2 rounded-xl text-sm font-medium transition-all duration-200 cursor-pointer',
               activeFilter === filter
-                ? 'bg-gradient-to-r from-accent-indigo to-accent-purple text-white shadow-glow-sm'
+                ? 'bg-gradient-to-r from-accent-indigo to-accent-purple text-bg-primary font-semibold shadow-glow-sm'
                 : 'glass text-gray-400 hover:text-white hover:border-white/20'
             )}
           >

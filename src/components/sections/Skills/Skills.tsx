@@ -7,7 +7,7 @@ export default function Skills() {
     <section id="skills" className="relative py-24 md:py-32 bg-bg-primary">
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse 50% 40% at 20% 60%, rgba(99,102,241,0.07) 0%, transparent 60%)' }}
+        style={{ background: 'radial-gradient(ellipse 50% 40% at 20% 60%, rgba(52,211,153,0.06) 0%, transparent 60%)' }}
       />
 
       <div className="section-container relative">

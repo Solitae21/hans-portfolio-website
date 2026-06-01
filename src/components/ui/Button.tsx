@@ -24,7 +24,7 @@ type Props = ButtonProps | AnchorButtonProps;
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
-    'bg-gradient-to-r from-accent-indigo to-accent-purple text-white font-medium shadow-glow-sm hover:shadow-glow-indigo hover:opacity-90',
+    'bg-gradient-to-r from-accent-indigo to-accent-purple text-bg-primary font-semibold shadow-glow-sm hover:shadow-glow-indigo hover:opacity-90',
   secondary:
     'border border-accent-indigo text-accent-indigo hover:bg-accent-indigo/10 font-medium',
   ghost:

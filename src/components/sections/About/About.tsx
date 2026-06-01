@@ -16,7 +16,7 @@ export default function About() {
       {/* Subtle background gradient */}
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse 60% 40% at 80% 50%, rgba(139,92,246,0.08) 0%, transparent 60%)' }}
+        style={{ background: 'radial-gradient(ellipse 60% 40% at 80% 50%, rgba(132,204,22,0.07) 0%, transparent 60%)' }}
       />
 
       <div className="section-container relative">

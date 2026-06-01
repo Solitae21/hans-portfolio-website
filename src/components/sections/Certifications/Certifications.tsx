@@ -15,7 +15,7 @@ export default function Certifications() {
     <section id="certifications" className="relative py-24 md:py-32 bg-bg-secondary">
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse 55% 40% at 15% 40%, rgba(99,102,241,0.07) 0%, transparent 60%)' }}
+        style={{ background: 'radial-gradient(ellipse 55% 40% at 15% 40%, rgba(52,211,153,0.06) 0%, transparent 60%)' }}
       />
 
       <div className="section-container relative">
