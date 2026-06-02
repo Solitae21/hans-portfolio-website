@@ -96,14 +96,9 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
           {/* Tech badges */}
           <div className="flex flex-wrap gap-1.5 mt-auto">
-            {project.technologies.slice(0, 5).map((tech) => (
+            {project.technologies.map((tech) => (
               <AnimatedBadge key={tech} label={tech} size="sm" />
             ))}
-            {project.technologies.length > 5 && (
-              <span className="text-xs text-gray-500 flex items-end pb-0.5">
-                +{project.technologies.length - 5} more
-              </span>
-            )}
           </div>
         </div>
       </GlassCard>
