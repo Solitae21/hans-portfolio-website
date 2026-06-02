@@ -28,6 +28,7 @@ export const skillGroups: readonly SkillGroup[] = [
       { name: 'Express.js', level: 'intermediate' },
       { name: 'Node.js', level: 'intermediate' },
       { name: 'MongoDB', level: 'intermediate' },
+      { name: 'Redis', level: 'intermediate' },
       { name: 'SQL Server', level: 'intermediate' },
       { name: 'REST APIs', level: 'advanced' },
       { name: 'C#', level: 'intermediate' },
