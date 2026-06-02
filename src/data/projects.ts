@@ -25,6 +25,24 @@ export const projects: readonly Project[] = [
     category: 'frontend',
   },
   {
+    id: 'isuzu-philippines',
+    title: 'Isuzu Philippines Website',
+    description:
+      'Co-developed the official Isuzu Philippines corporate website as a freelance project, implementing responsive page layouts and interactive UI components with vanilla JavaScript, HTML, and CSS.',
+    technologies: ['JavaScript', 'HTML', 'CSS'],
+    featured: false,
+    category: 'frontend',
+  },
+  {
+    id: 'amazones-gym',
+    title: 'Amazones Gym Website',
+    description:
+      'Co-developed a multi-section marketing site for a Japanese women’s-only gym brand. Built a Google Reviews carousel, FAQ accordion, store-listing cards with embedded Maps, and animated modals using vanilla JavaScript, HTML, and CSS.',
+    technologies: ['JavaScript', 'HTML', 'CSS'],
+    featured: false,
+    category: 'frontend',
+  },
+  {
     id: 'portfolio-website',
     title: 'Portfolio Website',
     description:
