@@ -44,7 +44,6 @@ export const skillGroups: readonly SkillGroup[] = [
       { name: 'Vite', level: 'advanced' },
       { name: 'VS Code', level: 'expert' },
       { name: 'Postman', level: 'advanced' },
-      { name: 'npm / yarn', level: 'advanced' },
     ],
   },
 ] as const;
