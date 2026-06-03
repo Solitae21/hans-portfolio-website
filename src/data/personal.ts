@@ -14,6 +14,7 @@ export const personal: PersonalInfo = {
   bio: `Frontend Developer with 2 years of professional experience building production-grade React/TypeScript applications in a fast-paced fintech environment. Computer Engineering graduate now expanding into full-stack development, with growing skills across backend technologies, APIs, and databases. Strong in problem-solving, debugging, and writing scalable, maintainable code in collaborative teams.`,
   location: 'Meycauayan, Bulacan, Philippines',
   email: 'hansamponin@gmail.com',
+  phone: '+63 976 625 1776',
   availableForWork: true,
   resumeUrl: '/Hans_Angelo_Amponin_Resume_2026.pdf',
   stats: [

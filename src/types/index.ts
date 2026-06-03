@@ -76,6 +76,7 @@ export interface PersonalInfo {
   readonly bio: string;
   readonly location: string;
   readonly email: string;
+  readonly phone: string;
   readonly availableForWork: boolean;
   readonly stats: readonly Stat[];
   readonly social: readonly SocialLink[];

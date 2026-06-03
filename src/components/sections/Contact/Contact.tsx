@@ -1,4 +1,4 @@
-import { Mail, MapPin } from 'lucide-react';
+import { Mail, MapPin, Phone } from 'lucide-react';
 import { ScrollReveal, SectionHeader, GlassCard } from '@/components/ui';
 import ContactForm from './ContactForm';
 import SocialLinks from './SocialLinks';
@@ -42,6 +42,18 @@ export default function Contact() {
                     <p className="text-xs text-gray-500 mb-0.5">Email</p>
                     <a href={`mailto:${personal.email}`} className="hover:text-white transition-colors">
                       {personal.email}
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 text-gray-400">
+                  <div className="w-10 h-10 glass rounded-xl flex items-center justify-center text-accent-purple shrink-0">
+                    <Phone size={18} />
+                  </div>
+                  <div>
+                    <p className="text-xs text-gray-500 mb-0.5">Phone</p>
+                    <a href={`tel:${personal.phone.replace(/\s/g, '')}`} className="hover:text-white transition-colors">
+                      {personal.phone}
                     </a>
                   </div>
                 </div>
