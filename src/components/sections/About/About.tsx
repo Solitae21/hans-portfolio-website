@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { MapPin, Mail, CheckCircle2 } from 'lucide-react';
+import { MapPin, Mail, Phone, CheckCircle2 } from 'lucide-react';
 import { ScrollReveal, SectionHeader, AnimatedBadge, Button } from '@/components/ui';
 import StatCard from './StatCard';
 import { personal } from '@/data/personal';
@@ -67,6 +67,10 @@ export default function About() {
                 <span className="flex items-center gap-2">
                   <Mail size={14} className="text-accent-cyan shrink-0" />
                   {personal.email}
+                </span>
+                <span className="flex items-center gap-2">
+                  <Phone size={14} className="text-accent-cyan shrink-0" />
+                  {personal.phone}
                 </span>
                 <span className="flex items-center gap-2">
                   <CheckCircle2 size={14} className="text-emerald-400 shrink-0" />
