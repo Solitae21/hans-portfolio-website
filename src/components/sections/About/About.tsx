@@ -7,7 +7,7 @@ import profileImg from '@/assets/img/profile.jpg';
 
 const techStack = [
   'React', 'TypeScript', 'Next.js', 'Tailwind CSS',
-  'Redux Toolkit', '.NET Core', 'Express.js', 'MongoDB',
+  'Redux Toolkit', 'MUI', '.NET Core', 'Express.js', 'MongoDB',
 ];
 
 export default function About() {
