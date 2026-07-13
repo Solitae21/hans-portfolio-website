@@ -4,7 +4,7 @@ export const experiences: readonly Experience[] = [
   {
     id: 'exp-1',
     company: 'Asialink Finance Corporation',
-    role: 'Frontend Developer',
+    role: 'Web Developer',
     period: 'Sep 2024 – Present',
     description:
       'Developed multiple internal web applications for a nationwide finance company, improving operational efficiency across departments.',
@@ -13,7 +13,7 @@ export const experiences: readonly Experience[] = [
       'Delivered a Fair Market Value Generator in under 2 months, eliminating manual spreadsheet workflows and reducing Sales team processing time by ~30%',
       'Redesigned and optimized a nationwide Master List Search application (2M+ records), directly supporting a 21% YoY company growth target through improved data-retrieval UX',
       'Developed an Auction Web Application frontend with a real-time bidding interface that onboarded 1,000+ active clients and measurably increased platform engagement',
-      'Held de facto tech-lead responsibilities on the frontend team — reviewing PRs, defining component architecture, and onboarding teammates',
+      'Took on informal frontend technical leadership responsibilities by reviewing pull requests, shaping component architecture, and mentoring teammates during onboarding',
     ],
     technologies: ['React', 'TypeScript', 'Redux Toolkit', 'RTK Query', 'MUI'],
     type: 'work',
