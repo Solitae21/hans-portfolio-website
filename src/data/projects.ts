@@ -13,6 +13,18 @@ export const projects: readonly Project[] = [
     featured: true,
     category: 'fullstack',
   },
+  {
+    id: 'docflow',
+    title: 'DocFlow',
+    description:
+      'A lightweight, Google Docs-style collaborative document editor. Create, edit, and share rich-text documents with autosave, bold/italic/underline, headings, and lists. Supports importing .txt, .md, and .docx files, plus document sharing with view or edit permissions. Built as an npm-workspaces monorepo with a React + TipTap frontend and an Express + Supabase backend.',
+    technologies: ['React', 'TypeScript', 'Vite', 'TipTap', 'React Router', 'Node.js', 'Express', 'Supabase', 'PostgreSQL', 'Vitest'],
+    imageUrl: '/projects/docflow.png',
+    liveUrl: 'https://docflow-lightweight-editor-api.vercel.app/',
+    githubUrl: 'https://github.com/Solitae21/docflow-lightweight-editor',
+    featured: true,
+    category: 'fullstack',
+  },
   // {
   //   id: 'isuzu-philippines',
   //   title: 'Isuzu Philippines Website',
