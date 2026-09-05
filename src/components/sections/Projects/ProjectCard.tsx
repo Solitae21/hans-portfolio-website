@@ -1,107 +1,87 @@
 import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { ExternalLink, Star } from 'lucide-react';
-import { GithubIcon } from '@/components/ui/BrandIcons';
-import { GlassCard, AnimatedBadge } from '@/components/ui';
+import { ArrowUpRight, Code2 } from 'lucide-react';
+import { AnimatedBadge } from '@/components/ui';
 import type { Project } from '@/types';
-
-interface ProjectCardProps {
-  project: Project;
-}
-
-export default function ProjectCard({ project }: ProjectCardProps) {
-  const [imageFailed, setImageFailed] = useState(false);
-
-  const categoryColor: Record<string, string> = {
-    frontend:  'text-accent-indigo border-accent-indigo/40',
-    fullstack: 'text-accent-purple border-accent-purple/40',
-    backend:   'text-accent-cyan border-accent-cyan/40',
-  };
-
-  const previewUrl = project.liveUrl && project.liveUrl !== '#' ? project.liveUrl : project.githubUrl;
-  const showPreview = Boolean(project.imageUrl) && !imageFailed;
-
+export default function ProjectCard({ project }: { project: Project }) {
+  const [failed, setFailed] = useState(false);
+  const preview =
+    project.liveUrl && project.liveUrl !== '#'
+      ? project.liveUrl
+      : project.githubUrl;
+  const visual = project.featured && (
+    <div className="flex aspect-[16/10] items-center justify-center overflow-hidden border-b border-line bg-[#E7EBE4] p-5 sm:p-7">
+      {project.imageUrl && !failed ? (
+        <img
+          src={project.imageUrl}
+          alt={`${project.title} application preview`}
+          loading="lazy"
+          onError={() => setFailed(true)}
+          className="h-full w-full rounded-md border border-line object-cover object-top shadow-sm transition-transform duration-300 group-hover:scale-[1.02]"
+        />
+      ) : (
+        <div className="flex flex-col items-center gap-3 text-muted">
+          <Code2 size={32} />
+          <span>{project.title}</span>
+        </div>
+      )}
+    </div>
+  );
   return (
-    <motion.div layout className="h-full">
-      <GlassCard className="overflow-hidden flex flex-col h-full group" hover glow={project.featured ? 'indigo' : 'none'}>
-        {/* Preview image */}
-        {showPreview && (
+    <article className="surface-card group h-full overflow-hidden">
+      {visual &&
+        (preview ? (
           <a
-            href={previewUrl}
+            href={preview}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={`Open ${project.title} preview`}
-            className="relative block aspect-video overflow-hidden border-b border-white/10 bg-gradient-to-br from-accent-indigo/20 to-accent-purple/20"
+            aria-label={`Open ${project.title}`}
           >
-            <img
-              src={project.imageUrl}
-              alt={`${project.title} preview`}
-              loading="lazy"
-              onError={() => setImageFailed(true)}
-              className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-bg-secondary/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            {visual}
           </a>
-        )}
-
-        {/* Content */}
-        <div className="p-6 flex flex-col flex-1">
-          {/* Header */}
-          <div className="flex items-start justify-between mb-3">
-            <div className="flex items-center gap-2">
-              {project.featured && (
-                <Star size={14} className="text-amber-400 fill-amber-400 shrink-0" />
-              )}
-              <span
-                className={`text-xs font-mono uppercase tracking-wider border rounded-full px-2 py-0.5 ${categoryColor[project.category] ?? 'text-gray-400 border-gray-600'}`}
-              >
-                {project.category}
-              </span>
-            </div>
-
-            {/* Action links */}
-            <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-              {project.githubUrl && (
-                <a
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="View source code"
-                  className="w-8 h-8 glass rounded-lg flex items-center justify-center text-gray-400 hover:text-white transition-colors"
-                >
-                  <GithubIcon size={15} />
-                </a>
-              )}
-              {project.liveUrl && project.liveUrl !== '#' && (
-                <a
-                  href={project.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="View live demo"
-                  className="w-8 h-8 glass rounded-lg flex items-center justify-center text-gray-400 hover:text-white transition-colors"
-                >
-                  <ExternalLink size={15} />
-                </a>
-              )}
-            </div>
-          </div>
-
-          {/* Title + description */}
-          <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-accent-indigo transition-colors">
-            {project.title}
-          </h3>
-          <p className="text-gray-400 text-sm leading-relaxed mb-4 flex-1">
-            {project.description}
-          </p>
-
-          {/* Tech badges */}
-          <div className="flex flex-wrap gap-1.5 mt-auto">
-            {project.technologies.map((tech) => (
-              <AnimatedBadge key={tech} label={tech} size="sm" />
-            ))}
-          </div>
+        ) : (
+          visual
+        ))}
+      <div className="p-6 sm:p-7">
+        <p className="eyebrow mb-3">
+          {project.featured ? 'Featured project' : 'Behind this site'} ·{' '}
+          {project.category === 'fullstack' ? 'Full stack' : 'Frontend'}
+        </p>
+        <h3 className="text-2xl font-medium tracking-tight">{project.title}</h3>
+        <p className="mt-3 max-w-2xl text-sm leading-6 text-muted">
+          {project.description}
+        </p>
+        <div className="mt-5 flex flex-wrap gap-1.5">
+          {project.technologies.map((tech) => (
+            <AnimatedBadge key={tech} label={tech} size="sm" />
+          ))}
         </div>
-      </GlassCard>
-    </motion.div>
+        <div className="mt-6 flex gap-6">
+          {project.liveUrl && project.liveUrl !== '#' && (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-link"
+              aria-label={`View ${project.title} live demo`}
+            >
+              Live demo
+              <ArrowUpRight size={15} />
+            </a>
+          )}
+          {project.githubUrl && (
+            <a
+              href={project.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-link"
+              aria-label={`View ${project.title} source code`}
+            >
+              Source code
+              <ArrowUpRight size={15} />
+            </a>
+          )}
+        </div>
+      </div>
+    </article>
   );
 }

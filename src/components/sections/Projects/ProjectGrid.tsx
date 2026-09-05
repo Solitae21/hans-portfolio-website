@@ -1,68 +1,48 @@
 import { useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
-import { cn } from '@/utils/cn';
 import ProjectCard from './ProjectCard';
 import { projects, PROJECT_FILTERS } from '@/data/projects';
 import type { ProjectFilter } from '@/types';
-
-const filterLabels: Record<ProjectFilter, string> = {
-  all:       'All',
-  frontend:  'Frontend',
-  fullstack: 'Full Stack',
-  backend:   'Backend',
+const labels: Record<ProjectFilter, string> = {
+  all: 'All projects',
+  frontend: 'Frontend',
+  fullstack: 'Full stack',
+  backend: 'Backend',
 };
-
 export default function ProjectGrid() {
-  const [activeFilter, setActiveFilter] = useState<ProjectFilter>('all');
-
-  const filtered = activeFilter === 'all'
-    ? projects
-    : projects.filter((p) => p.category === activeFilter);
-
+  const [filter, setFilter] = useState<ProjectFilter>('all');
+  const filtered =
+    filter === 'all'
+      ? projects
+      : projects.filter((project) => project.category === filter);
   return (
     <div>
-      {/* Filter tabs */}
-      <div className="flex flex-wrap justify-center gap-2 mb-10">
-        {PROJECT_FILTERS.map((filter) => (
+      <div aria-label="Filter projects" className="mb-8 flex flex-wrap gap-2">
+        {PROJECT_FILTERS.map((item) => (
           <button
-            key={filter}
-            onClick={() => setActiveFilter(filter)}
-            className={cn(
-              'px-5 py-2 rounded-xl text-sm font-medium transition-all duration-200 cursor-pointer',
-              activeFilter === filter
-                ? 'bg-gradient-to-r from-accent-indigo to-accent-purple text-white shadow-glow-sm'
-                : 'glass text-gray-400 hover:text-white hover:border-white/20'
-            )}
+            key={item}
+            aria-pressed={filter === item}
+            onClick={() => setFilter(item)}
+            className={`rounded-full border px-4 py-2.5 text-xs font-medium transition-colors ${filter === item ? 'border-ink bg-ink text-white' : 'border-line bg-transparent text-muted hover:border-ink'}`}
           >
-            {filterLabels[filter]}
+            {labels[item]}
           </button>
         ))}
       </div>
-
-      {/* Grid */}
-      <motion.div
-        layout
-        className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
-      >
-        <AnimatePresence mode="popLayout">
-          {filtered.map((project) => (
-            <motion.div
-              key={project.id}
-              layout
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.3 }}
-              className="flex"
-            >
-              <ProjectCard project={project} />
-            </motion.div>
-          ))}
-        </AnimatePresence>
-      </motion.div>
-
+      <div className="grid gap-6 md:grid-cols-2">
+        {filtered.map((project) => (
+          <div
+            key={project.id}
+            className={project.featured ? '' : 'md:col-span-2'}
+          >
+            <ProjectCard project={project} />
+          </div>
+        ))}
+      </div>
+      <p role="status" className="sr-only">
+        {filtered.length} projects shown
+      </p>
       {filtered.length === 0 && (
-        <p className="text-center text-gray-500 py-16">No projects in this category yet.</p>
+        <p className="py-8 text-muted">No projects in this category yet.</p>
       )}
     </div>
   );

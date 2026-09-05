@@ -1,6 +1,4 @@
 import { cn } from '@/utils/cn';
-import GradientText from './GradientText';
-
 interface SectionHeaderProps {
   tag: string;
   title: string;
@@ -8,24 +6,26 @@ interface SectionHeaderProps {
   align?: 'left' | 'center';
   className?: string;
 }
-
 export default function SectionHeader({
   tag,
   title,
   subtitle,
-  align = 'center',
+  align = 'left',
   className,
 }: SectionHeaderProps) {
   return (
-    <div className={cn('mb-16', align === 'center' ? 'text-center' : 'text-left', className)}>
-      <span className="font-mono text-accent-cyan text-sm tracking-[0.2em] uppercase mb-3 block">
-        {tag}
-      </span>
-      <h2 className="text-4xl md:text-5xl font-bold mb-4">
-        <GradientText animate>{title}</GradientText>
-      </h2>
+    <div
+      className={cn('mb-10', align === 'center' && 'text-center', className)}
+    >
+      <p className="eyebrow mb-4">{tag}</p>
+      <h2 className="section-title">{title}</h2>
       {subtitle && (
-        <p className="text-gray-400 text-lg max-w-2xl mx-auto text-balance leading-relaxed">
+        <p
+          className={cn(
+            'mt-4 max-w-xl text-base leading-7 text-muted',
+            align === 'center' && 'mx-auto',
+          )}
+        >
           {subtitle}
         </p>
       )}

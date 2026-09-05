@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import type { NavItem } from '@/types';
 
 export default function useActiveSection(navItems: readonly NavItem[]): string {
-  const [activeSection, setActiveSection] = useState(navItems[0]?.sectionId ?? '');
+  const [activeSection, setActiveSection] = useState('');
 
   useEffect(() => {
     const observers: IntersectionObserver[] = [];
@@ -31,7 +31,7 @@ export default function useActiveSection(navItems: readonly NavItem[]): string {
             sectionMap.delete(sectionId);
           }
         },
-        { threshold: [0, 0.25, 0.5], rootMargin: '-80px 0px -40% 0px' }
+        { threshold: [0, 0.25, 0.5], rootMargin: '-80px 0px -40% 0px' },
       );
 
       observer.observe(el);

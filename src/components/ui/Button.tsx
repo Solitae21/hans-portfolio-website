@@ -23,18 +23,16 @@ interface AnchorButtonProps extends React.AnchorHTMLAttributes<HTMLAnchorElement
 type Props = ButtonProps | AnchorButtonProps;
 
 const variantClasses: Record<ButtonVariant, string> = {
-  primary:
-    'bg-gradient-to-r from-accent-indigo to-accent-purple text-white font-medium shadow-glow-sm hover:shadow-glow-indigo hover:opacity-90',
+  primary: 'bg-brand text-white font-medium hover:bg-[#1D47AE]',
   secondary:
-    'border border-accent-indigo text-accent-indigo hover:bg-accent-indigo/10 font-medium',
-  ghost:
-    'text-gray-400 hover:text-white hover:bg-white/5 font-medium',
+    'border border-line bg-transparent text-ink hover:bg-white font-medium',
+  ghost: 'text-muted hover:text-brand hover:bg-surface font-medium',
 };
 
 const sizeClasses = {
-  sm: 'px-4 py-2 text-sm rounded-lg',
-  md: 'px-6 py-3 text-sm rounded-xl',
-  lg: 'px-8 py-4 text-base rounded-xl',
+  sm: 'px-4 py-2 text-sm rounded-md',
+  md: 'px-6 py-3 text-sm rounded-md',
+  lg: 'px-8 py-4 text-base rounded-md',
 };
 
 export default function Button(props: Props) {
@@ -56,15 +54,26 @@ export default function Button(props: Props) {
     'disabled:opacity-50 disabled:cursor-not-allowed',
     variantClasses[variant],
     sizeClasses[size],
-    className
+    className,
   );
 
   const content = (
     <>
       {loading ? (
         <svg className="animate-spin h-4 w-4" fill="none" viewBox="0 0 24 24">
-          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z" />
+          <circle
+            className="opacity-25"
+            cx="12"
+            cy="12"
+            r="10"
+            stroke="currentColor"
+            strokeWidth="4"
+          />
+          <path
+            className="opacity-75"
+            fill="currentColor"
+            d="M4 12a8 8 0 018-8v8z"
+          />
         </svg>
       ) : (
         leftIcon
@@ -76,7 +85,10 @@ export default function Button(props: Props) {
 
   if (as === 'a') {
     return (
-      <a className={baseClasses} {...(rest as React.AnchorHTMLAttributes<HTMLAnchorElement>)}>
+      <a
+        className={baseClasses}
+        {...(rest as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
+      >
         {content}
       </a>
     );
@@ -85,7 +97,10 @@ export default function Button(props: Props) {
   return (
     <button
       className={baseClasses}
-      disabled={loading || (rest as React.ButtonHTMLAttributes<HTMLButtonElement>).disabled}
+      disabled={
+        loading ||
+        (rest as React.ButtonHTMLAttributes<HTMLButtonElement>).disabled
+      }
       {...(rest as React.ButtonHTMLAttributes<HTMLButtonElement>)}
     >
       {content}

@@ -1,134 +1,39 @@
-import { motion } from 'framer-motion';
-import { MapPin, Mail, Phone, CheckCircle2 } from 'lucide-react';
-import { ScrollReveal, SectionHeader, AnimatedBadge, Button } from '@/components/ui';
-import StatCard from './StatCard';
 import { personal } from '@/data/personal';
-import profileImg from '@/assets/img/profile.jpg';
-
-const techStack = [
-  'React', 'TypeScript', 'Next.js', 'Tailwind CSS',
-  'Redux Toolkit', 'MUI', '.NET Core', 'Express.js', 'MongoDB',
-];
-
+import { SectionHeader } from '@/components/ui';
 export default function About() {
   return (
-    <section id="about" className="relative py-24 md:py-32 bg-bg-secondary">
-      {/* Subtle background gradient */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse 60% 40% at 80% 50%, rgba(139,92,246,0.08) 0%, transparent 60%)' }}
-      />
-
-      <div className="section-container relative">
-        <ScrollReveal>
-          <SectionHeader
-            tag="01. About"
-            title="About Me"
-            subtitle="Get to know the developer behind the keyboard."
-          />
-        </ScrollReveal>
-
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left — Avatar + bio */}
-          <ScrollReveal direction="left">
-            <div className="flex flex-col gap-6">
-              {/* Avatar placeholder */}
-              <div className="relative w-56 h-56 mx-auto lg:mx-0">
-                <div className="w-full h-full rounded-2xl bg-gradient-to-br from-accent-indigo via-accent-purple to-accent-cyan p-0.5">
-                  <div className="w-full h-full rounded-2xl bg-bg-tertiary flex items-center justify-center overflow-hidden">
-                    <img
-                      src={profileImg}
-                      alt={personal.name}
-                      className="w-full h-full object-cover"
-                      style={{ objectPosition: 'center 25%' }}
-                    />
-                  </div>
+    <section
+      id="about"
+      className="section-space border-y border-line bg-surface"
+    >
+      <div className="section-container grid gap-8 md:grid-cols-[1fr_1.4fr] md:gap-20">
+        <SectionHeader
+          tag="03 / A little about me"
+          title="Good software starts with care."
+        />
+        <div>
+          <p className="text-lg leading-8 text-muted">{personal.bio}</p>
+          <p className="mt-5 text-sm leading-7 text-muted">
+            I care about the details that make software useful: clear
+            interfaces, maintainable code, and a collaborative approach to
+            solving problems.
+          </p>
+          <div className="mt-8 grid grid-cols-3 gap-4 border-t border-line pt-7">
+            {personal.stats
+              .filter((stat) => stat.label !== 'Cups of Coffee')
+              .map((stat) => (
+                <div key={stat.label}>
+                  <p className="text-3xl font-medium tracking-tight">
+                    {stat.value}
+                    {stat.suffix}
+                  </p>
+                  <p className="mt-2 text-xs text-muted">{stat.label}</p>
                 </div>
-                {/* Glow ring */}
-                <div className="absolute inset-0 rounded-2xl shadow-glow-purple opacity-40 pointer-events-none" />
-              </div>
-
-              {/* Bio text */}
-              <div className="space-y-4">
-                <p className="text-gray-300 leading-relaxed">{personal.bio}</p>
-                <p className="text-gray-400 leading-relaxed">
-                  I believe great software starts with great UX. Whether it's a subtle animation
-                  or a complex data visualisation, I care deeply about the details that make
-                  experiences feel polished and intentional.
-                </p>
-              </div>
-
-              {/* Meta info */}
-              <div className="flex flex-col gap-2 text-sm text-gray-400">
-                <span className="flex items-center gap-2">
-                  <MapPin size={14} className="text-accent-cyan shrink-0" />
-                  {personal.location}
-                </span>
-                <span className="flex items-center gap-2">
-                  <Mail size={14} className="text-accent-cyan shrink-0" />
-                  {personal.email}
-                </span>
-                <span className="flex items-center gap-2">
-                  <Phone size={14} className="text-accent-cyan shrink-0" />
-                  {personal.phone}
-                </span>
-                <span className="flex items-center gap-2">
-                  <CheckCircle2 size={14} className="text-emerald-400 shrink-0" />
-                  {personal.availableForWork ? 'Open to remote opportunities' : 'Currently unavailable'}
-                </span>
-              </div>
-
-              <div className="flex gap-4 pt-2">
-                <Button as="a" href="#contact" size="sm">
-                  Get In Touch
-                </Button>
-                <Button as="a" href={personal.resumeUrl} size="sm" variant="secondary" target="_blank" rel="noopener noreferrer">
-                  View Resume
-                </Button>
-              </div>
-            </div>
-          </ScrollReveal>
-
-          {/* Right — Stats + tech stack */}
-          <ScrollReveal direction="right">
-            <div className="flex flex-col gap-8">
-              {/* Stats grid */}
-              <div className="grid grid-cols-2 gap-4">
-                {personal.stats.map((stat, i) => (
-                  <StatCard key={stat.label} stat={stat} index={i} />
-                ))}
-              </div>
-
-              {/* Tech stack */}
-              <div>
-                <h3 className="text-gray-300 font-medium mb-4 flex items-center gap-2">
-                  <span className="w-8 h-px bg-accent-indigo inline-block" />
-                  Tech I work with
-                </h3>
-                <motion.div
-                  className="flex flex-wrap gap-2"
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  variants={{
-                    visible: { transition: { staggerChildren: 0.05 } },
-                  }}
-                >
-                  {techStack.map((tech) => (
-                    <motion.div
-                      key={tech}
-                      variants={{
-                        hidden:   { opacity: 0, scale: 0.8 },
-                        visible:  { opacity: 1, scale: 1 },
-                      }}
-                    >
-                      <AnimatedBadge label={tech} />
-                    </motion.div>
-                  ))}
-                </motion.div>
-              </div>
-            </div>
-          </ScrollReveal>
+              ))}
+          </div>
+          <p className="mt-8 text-xs text-muted">
+            Based in {personal.location}
+          </p>
         </div>
       </div>
     </section>

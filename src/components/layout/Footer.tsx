@@ -1,40 +1,17 @@
-import { NAV_ITEMS } from '@/utils/constants';
+import { ArrowUp } from 'lucide-react';
 import { personal } from '@/data/personal';
-
 export default function Footer() {
-  const year = new Date().getFullYear();
-
   return (
-    <footer className="bg-bg-primary border-t border-white/5 py-10">
-      <div className="section-container">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          {/* Logo */}
-          <a href="#hero" className="font-mono text-sm font-semibold text-white hover:text-accent-indigo transition-colors">
-            <span className="text-accent-indigo">&lt;</span>
-            Hans
-            <span className="text-accent-indigo">/&gt;</span>
-          </a>
-
-          {/* Nav links */}
-          <ul className="flex flex-wrap justify-center gap-x-6 gap-y-2">
-            {NAV_ITEMS.map((item) => (
-              <li key={item.sectionId}>
-                <a
-                  href={item.href}
-                  className="text-gray-500 hover:text-gray-300 text-sm transition-colors"
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-
-          {/* Copyright */}
-          <p className="text-gray-600 text-sm flex items-center gap-1.5">
-            © {year} {personal.firstName} Amponin
-    
-          </p>
-        </div>
+    <footer className="border-t border-line py-8">
+      <div className="section-container flex flex-wrap items-center justify-between gap-5 text-xs text-muted">
+        <p>
+          © {new Date().getFullYear()} {personal.name}
+        </p>
+        <p>Built with care, React & TypeScript.</p>
+        <a href="#hero" className="inline-flex items-center gap-2 text-ink">
+          Back to top
+          <ArrowUp size={14} />
+        </a>
       </div>
     </footer>
   );

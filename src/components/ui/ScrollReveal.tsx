@@ -13,25 +13,25 @@ interface ScrollRevealProps {
 }
 
 const directionOffset: Record<RevealDirection, { x?: number; y?: number }> = {
-  up:    { y: 30 },
-  down:  { y: -30 },
-  left:  { x: 30 },
-  right: { x: -30 },
-  none:  {},
+  up: { y: 12 },
+  down: { y: -12 },
+  left: { x: 12 },
+  right: { x: -12 },
+  none: {},
 };
 
 export default function ScrollReveal({
   children,
   delay = 0,
   direction = 'up',
-  duration = 0.6,
+  duration = 0.4,
   className,
   once = true,
 }: ScrollRevealProps) {
   const prefersReduced = usePrefersReducedMotion();
 
   const initial = prefersReduced
-    ? { opacity: 0 }
+    ? false
     : { opacity: 0, ...directionOffset[direction] };
 
   const animate = { opacity: 1, x: 0, y: 0 };
@@ -41,7 +41,11 @@ export default function ScrollReveal({
       initial={initial}
       whileInView={animate}
       viewport={{ once, margin: '-80px' }}
-      transition={{ duration, delay, ease: [0.25, 0.1, 0.25, 1.0] }}
+      transition={{
+        duration: prefersReduced ? 0 : duration,
+        delay: prefersReduced ? 0 : delay,
+        ease: [0.25, 0.1, 0.25, 1.0],
+      }}
       className={cn(className)}
     >
       {children}

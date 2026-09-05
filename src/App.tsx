@@ -10,14 +10,14 @@ import Contact from '@/components/sections/Contact/Contact';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-bg-primary text-gray-100">
+    <div className="min-h-screen bg-bg-primary text-ink">
       <Navbar />
-      <main>
+      <main id="main" tabIndex={-1}>
         <Hero />
-        <About />
-        <Skills />
         <Projects />
         <Experience />
+        <About />
+        <Skills />
         <Certifications />
         <Contact />
       </main>
