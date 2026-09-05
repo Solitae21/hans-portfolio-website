@@ -1,51 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
-  <defs>
-    <!-- Signature gradient: indigo → purple → cyan -->
-    <linearGradient id="brand" x1="14" y1="14" x2="50" y2="50" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#6366F1"/>
-      <stop offset="0.55" stop-color="#8B5CF6"/>
-      <stop offset="1" stop-color="#06B6D4"/>
-    </linearGradient>
-    <!-- Dark tile gradient: bg-tertiary → bg-primary -->
-    <linearGradient id="tile" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#16162B"/>
-      <stop offset="1" stop-color="#0A0A0F"/>
-    </linearGradient>
-    <!-- Atmospheric top glow -->
-    <radialGradient id="glow" cx="0.5" cy="0.18" r="0.85">
-      <stop offset="0" stop-color="#6366F1" stop-opacity="0.30"/>
-      <stop offset="1" stop-color="#6366F1" stop-opacity="0"/>
-    </radialGradient>
-    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
-      <feGaussianBlur stdDeviation="2.4"/>
-    </filter>
-  </defs>
-
-  <!-- Glass tile -->
-  <rect x="1" y="1" width="62" height="62" rx="15" fill="url(#tile)"/>
-  <rect x="1" y="1" width="62" height="62" rx="15" fill="url(#glow)"/>
-
-  <!-- Soft brand glow behind the mark -->
-  <g filter="url(#soft)" opacity="0.55">
-    <rect x="25.5" y="20" width="6" height="24" rx="2" fill="url(#brand)"/>
-    <rect x="33.5" y="20" width="6" height="24" rx="2" fill="url(#brand)"/>
-    <rect x="25.5" y="29" width="14" height="6" rx="2" fill="url(#brand)"/>
-  </g>
-
-  <!-- Code brackets framing the monogram -->
-  <path d="M17 23 L11 32 L17 41" fill="none" stroke="#6366F1" stroke-width="3.2"
-        stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M47 23 L53 32 L47 41" fill="none" stroke="#06B6D4" stroke-width="3.2"
-        stroke-linecap="round" stroke-linejoin="round"/>
-
-  <!-- H monogram -->
-  <g fill="url(#brand)">
-    <rect x="25.5" y="20" width="6" height="24" rx="2"/>
-    <rect x="33.5" y="20" width="6" height="24" rx="2"/>
-    <rect x="25.5" y="29" width="14" height="6" rx="2"/>
-  </g>
-
-  <!-- Subtle inner border for the glass edge -->
-  <rect x="1.5" y="1.5" width="61" height="61" rx="14.5" fill="none"
-        stroke="#FFFFFF" stroke-opacity="0.08"/>
+  <title>Hans</title>
+  <rect x="1" y="1" width="62" height="62" rx="14" fill="#FAFAF7" stroke="#DFE3DC" stroke-width="2"/>
+  <path d="M15 14H22V29C24 26 27 25 30 25C37 25 41 30 41 37V49H34V38C34 34 32 32 29 32C25 32 22 35 22 39V49H15V14Z" fill="#202522"/>
+  <circle cx="49" cy="45" r="4" fill="#2458D3"/>
 </svg>
