@@ -23,8 +23,8 @@ export default function Hero() {
             Hi, I’m Hans.
             <br />
             <span className="text-muted">
-              I build for
-              <br className="hidden lg:block" /> the real world.
+              I develop web
+              <br className="hidden lg:block" /> applications.
             </span>
           </h1>
           <p className="mt-7 max-w-lg text-base leading-7 text-muted">
@@ -79,7 +79,7 @@ export default function Hero() {
               className="aspect-[4/5] w-full rounded-[150px_150px_4px_4px] object-cover object-[center_25%]"
             />
             <div className="flex items-center justify-between py-5 text-[10px] font-medium uppercase tracking-[.12em]">
-              <span>Thoughtful code. Useful products.</span>
+              <span>React &amp; TypeScript development.</span>
               <span className="text-brand">↗</span>
             </div>
           </div>
